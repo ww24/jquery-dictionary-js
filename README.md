@@ -8,7 +8,7 @@ Link		: [Website](http://dev.ww24.jp/javascript/jquery_dictionary_js/)
 License		: [MIT License](http://www.opensource.org/licenses/mit-license.php)  
 
 
-## 概要(Outline)
+## 概要 - Outline
 サイトに簡易的な辞書機能付加するjQueryプラグイン
 * 検索(文字列の部分一致)
 * 検索結果のリスト表示
@@ -17,7 +17,7 @@ License		: [MIT License](http://www.opensource.org/licenses/mit-license.php)
 * HTML5で辞書データを生成
 
 
-## 使い方(Usage)
+## 使い方 - Usage
 
 ### 設置方法
 
@@ -46,14 +46,14 @@ License		: [MIT License](http://www.opensource.org/licenses/mit-license.php)
 - 2行目に関連する項目(カンマ[,]区切り)
 - 3行目以降には内容(HTMLタグが使えます)
 
-を書き、検索ワード.htmlというファイル名で保存します。
+を記述し`検索ワード.html`というファイル名で保存します。
 テキストファイルのフォーマットについてはdictionary_dataディレクトリに内を参考にして下さい。
 
 上記のフォーマットで作成したHTMLファイルを
 [Website](http://dev.ww24.jp/javascript/jquery_dictionary_js/)でJSONに変換します。
 
 
-## 更新履歴(History)
+## 更新履歴 - History
 
 ### v1.0.4: 2011/09/09
 - コードの管理をgistからgithubへ変更
@@ -88,8 +88,7 @@ License		: [MIT License](http://www.opensource.org/licenses/mit-license.php)
 - 自動リンクをクリックされたときに実行するイベントを追加
 
 ### Beta(0.9.0): 初リリース
-基本的な機能
----
+*基本的な機能*
 - 検索
 - 検索結果表示
 - 自動リンク設置
