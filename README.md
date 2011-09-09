@@ -4,7 +4,7 @@ jquery.dictionary.js
 
 Version    	: 1.0.4  
 Copyright	: ww24  
-Link		: [Website](http://dev.ww24.jp/javascript/jquery_dictionary_js/)  
+Link		: [Website](http://dev.ww24.jp/javascript/jquery-dictionary-js/)  
 License		: [MIT License](http://www.opensource.org/licenses/mit-license.php)  
 
 
@@ -21,7 +21,7 @@ License		: [MIT License](http://www.opensource.org/licenses/mit-license.php)
 
 ### 設置方法
 
-	$("#Dic").dictionary({
+	$("#dic").dictionary({
 		// 辞書ファイルまでのパス
 		path: "dictionary.json",
 		// [option]テキスト中の検索ワードにリンクを張る(セレクタ or false)
@@ -36,7 +36,7 @@ License		: [MIT License](http://www.opensource.org/licenses/mit-license.php)
 		click: function(){}
 	});
 
-**[Option]はデフォルトで全て無効**
+**[option]はデフォルトで全て無効**
 
 
 ### 辞書ファイルの生成方法
@@ -50,7 +50,7 @@ License		: [MIT License](http://www.opensource.org/licenses/mit-license.php)
 テキストファイルのフォーマットについてはdictionary_dataディレクトリに内を参考にして下さい。
 
 上記のフォーマットで作成したHTMLファイルを
-[Website](http://dev.ww24.jp/javascript/jquery_dictionary_js/)でJSONに変換します。
+[Website](http://dev.ww24.jp/javascript/jquery-dictionary-js/)でJSONに変換します。
 
 
 ## 更新履歴 - History
@@ -89,6 +89,7 @@ License		: [MIT License](http://www.opensource.org/licenses/mit-license.php)
 
 ### Beta(0.9.0): 初リリース
 *基本的な機能*
+
 - 検索
 - 検索結果表示
 - 自動リンク設置
