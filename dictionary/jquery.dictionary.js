@@ -291,7 +291,7 @@
 							$pop.stop().css({
 								top: i_top,
 								left: i_left,
-                                display: block
+                                display: "block"
 							}).animate({
 								top: (topOrBottom ? "-" : "+") + "=" + distance + "px",
 								opacity: 1
