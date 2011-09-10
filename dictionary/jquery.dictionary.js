@@ -348,7 +348,6 @@
 			}
 		});
 		
-		// メソッドチェーンの為にjQueryオブジェクトを返す
-		return $(this);
+		return this;
 	};
 })(jQuery);
