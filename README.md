@@ -42,12 +42,13 @@ License		: [MIT License](http://www.opensource.org/licenses/mit-license.php)
 ### 辞書ファイルの生成方法
 
 テキストファイルの
+
 - 1行目にタイトル
 - 2行目に関連する項目(カンマ[,]区切り)
 - 3行目以降には内容(HTMLタグが使えます)
 
 を記述し`検索ワード.html`というファイル名で保存します。
-テキストファイルのフォーマットについてはdictionary_dataディレクトリに内を参考にして下さい。
+テキストファイルのフォーマットについてはdictionary_dataディレクトリ内を参考にして下さい。
 
 上記のフォーマットで作成したHTMLファイルを
 [Website](http://dev.ww24.jp/javascript/jquery-dictionary-js/)でJSONに変換します。

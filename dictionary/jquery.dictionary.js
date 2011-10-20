@@ -1,5 +1,5 @@
 /*
- *    jquery.dictionary.js
+ *	jquery.dictionary.js
  *	簡易辞書プラグイン
  *	Version		: 1.0.4
  *	Copyright	: ww24
