@@ -1,82 +1,88 @@
 /* Demo html style */
 body {
-    font-size		: 14px;
+	font-size				: 14px;
+	background-color		: #e6e6fa;
 }
 
 h1 {
-	padding			: 8px;
-	font-size		: 24px;
+	padding					: 8px;
+	font-size				: 24px;
 }
 
 h2 {
-	padding			: 6px;
-	font-size		: 18px;
+	padding					: 6px;
+	font-size				: 18px;
 }
 
 h3 {
-	padding			: 4px;
-	font-size		: 16px;
+	padding					: 4px;
+	font-size				: 16px;
 }
 
 #wrapper {
-	width			: 700px;
-	padding			: 50px;
-	margin			: auto;
+	width					: 700px;
+	padding					: 50px;
+	margin					: auto;
+	box-shadow				: 0 1px 4px rgba(0, 0, 0, 0.75);
+	-webkit-border-radius	: 10px;
+	-moz-border-radius		: 10px;
+	border-radius			: 10px;
+	background-color		: #fffff0;
 }
 
 #source-code {
-	width			: 700px;
-	font-size		: 13px;
+	width					: 700px;
+	font-size				: 13px;
 }
 
 #demo {
-	min-height		: 300px;
+	min-height				: 300px;
 }
 
 #dicgen {
-	width			: 700px;
+	width					: 700px;
 }
 #draganddrop {
-	width			: 600px;
-	margin			: 15px auto;
-	padding			: 130px 5px;
-	border			: thick #50a0f0 dashed;
-	font-size		: 14px;
+	width					: 600px;
+	margin					: 15px auto;
+	padding					: 130px 5px;
+	border					: thick #50a0f0 dashed;
+	font-size				: 14px;
 }
 #draganddrop p {
-	text-align	: center;
+	text-align				: center;
 }
 #draganddrop ul {
-	height			: 200px;
-	margin			: 0;
-	padding			: 0;
-	overflow-y		: scroll;
-	overflow-x		: hidden;
-	list-style-type	: none;
+	height					: 200px;
+	margin					: 0;
+	padding					: 0;
+	overflow-y				: scroll;
+	overflow-x				: hidden;
+	list-style-type			: none;
 }
 #draganddrop ul li {
-	width			: 100%;
-	margin			: 0;
-	padding			: 8px 0;
-	border-bottom	: thin #e0ab56 solid;
+	width					: 100%;
+	margin					: 0;
+	padding					: 8px 0;
+	border-bottom			: thin #e0ab56 solid;
 }
 #draganddrop ul li span {
-	padding			: 0 5px;
+	padding					: 0 5px;
 }
 #draganddrop ul li span.del:hover {
-	cursor			: pointer;
+	cursor					: pointer;
 }
 #draganddrop ul li span.del:hover {
-	color			: #f00;
+	color					: #f00;
 }
 #generate {
-	width			: 100%;
-	padding			: 18px 0;
-	margin			: 0;
-	text-align		: center;
-	background		: #50a0f0;
-	cursor			: pointer;
+	width					: 100%;
+	padding					: 18px 0;
+	margin					: 0;
+	text-align				: center;
+	background				: #50a0f0;
+	cursor					: pointer;
 }
 #generate:hover {
-	background		: #3090f0;
+	background				: #3090f0;
 }

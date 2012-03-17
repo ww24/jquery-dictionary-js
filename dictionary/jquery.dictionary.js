@@ -1,14 +1,14 @@
 /*
  *	jquery.dictionary.js
  *	簡易辞書プラグイン
- *	Version		: 1.0.4
+ *	Version		: 1.0.5
  *	Copyright	: ww24
  *	License		: MIT License
  */
 (function($){
-	// 辞書データオブジェクト
+	// Dictionary Object
 	var dic = {};
-	// テキストボックスの値
+	// value of textbox
 	var textbox = "";
 	// hasOwnProperty
 	var hasOwn = Object.prototype.hasOwnProperty;
@@ -28,26 +28,21 @@
 				'<div id="dicResponse"></dd>'+
 			'</div>'
 		);
-		
+
 // #関数定義
 		// 重複しない文字列置換操作
-		var strReplace = function(str, from, to, count) {
-			// 配列かチェック
-			var isArray = function(a) {
-				return typeof(a)=="object" && (a instanceof Array);
-			};
-			
+		var strReplace = function(str, from, to) {
 			// String→Array
 			var toArray = function(a) {
-				return isArray(a) ? a : [a];
+				return $.isArray(a) ? a : [a];
 			};
 			from = toArray(from);
 			to = toArray(to);
 			
 			// Array(from+to) table[0]->from, table[1]->to
 			var table = [];
-			for (var i=0,l=from.length; i<l; i++) {
-				table[i] = [from[i], (typeof(to[i])=="undefined")?"":String(to[i])];
+			for (var i = 0, l = from.length; i < l; i++) {
+				table[i] = [from[i], typeof(to[i]) == "undefined" ? "" : String(to[i])];
 			}
 			
 			// from length sort
@@ -59,17 +54,17 @@
 			
 			// 配列を走査して文字列をsplitする
 			var depth = [];
-			var strSp = function(str, word, c, d) {
+			var strSp = function(str, word, depth, d) {
 				var arr = [];
-				if (isArray(str) && str.length) {
+				if ($.isArray(str) && str.length) {
 					d++;
-					for (var i=0,l=str.length; i<l; i++) {
-						arr[i] = arguments.callee(str[i], word, c, d);
+					for (var i = 0, l = str.length; i < l; i++) {
+						arr[i] = arguments.callee(str[i], word, depth, d);
 					}
 				} else {
 					arr = str.split(word);
 				}
-				depth[c].push(d + 1);
+				depth.push(d + 1);
 				return arr;
 			};
 			
@@ -78,7 +73,7 @@
 				if (d > 1) {
 					d--;
 					var str = [];
-					for (var i=0,l=arr.length; i<l; i++) {
+					for (var i = 0, l = arr.length; i < l; i++) {
 						str[i] = arguments.callee(arr[i], word, d);
 					}
 					return str;
@@ -87,13 +82,12 @@
 			};
 			
 			// 実行
-			var len = table.length;
-			for (i=0,l=len; i<l; i++) {
+			for (i = 0, l = table.length; i < l; i++) {
 				depth[i] = [];
-				str = strSp(str, table[i][0], i, 0);
+				str = strSp(str, table[i][0], depth[i], 0);
 				depth[i] = Math.max.apply(null, depth[i]);
 			}
-			for (i=len-1; i>=0; i--) {
+			for (i = l - 1; i >= 0; i--) {
 				str = strJo(str, table[i][1], depth[i]);
 			}
 			return str;
@@ -115,7 +109,7 @@
 					// リストタグ挿入
 					res.push('<ul>');
 					// マッチング-正規表現
-					regexp = new RegExp("");
+					var regexp = new RegExp("");
 					regexp.compile(keyword, "i");
 					for (var key in dic) {
 						if (hasOwn.call(dic, key)) {
@@ -124,16 +118,16 @@
 							if (str) {
 								count++;
 								// 一致した文字列を太文字に
-								key = key.replace(RegExp(str, "i"), '<b>'+str+'</b>');
-								res.push('<li>'+key+'</li>');
+								key = key.replace(RegExp(str, "i"), '<b>' + str + '</b>');
+								res.push('<li>' + key + '</li>');
 							}
 						}
 					}
 					// 1つもマッチしなかった場合
-					if (!count) {
-						$("#dicResult").html('「'+keyword+'」は見つかりません。');
+					if (! count) {
+						$("#dicResult").html('「' + keyword + '」は見つかりません。');
 					} else {
-						$("#dicResult").html('検索結果：「'+keyword+'」について'+count+'個見つかりました。');
+						$("#dicResult").html('検索結果：「' + keyword + '」について' + count + '個見つかりました。');
 					}
 					// リストタグ挿入
 					res.push('</ul>');
@@ -156,12 +150,12 @@
 					linkTag.push('<hr /><p><b>関連する項目：</b>');
 					for (var i in dic[keyword].link) {
 						if (hasOwn.call(dic[keyword].link, i)) {
-							linkTag.push('<a href="#" class="dicTag">'+dic[keyword].link[i]+'</a>　');
+							linkTag.push('<a href="#" class="dicTag">' + dic[keyword].link[i] + '</a>　');
 						}
 					}
 					linkTag.push('</p>');
 				}
-				var res = '<dl class="dicRes"><dt>'+dic[keyword].title+'</dt><dd>'+dic[keyword].content + linkTag.join("")+'<dd></dl>';
+				var res = '<dl class="dicRes"><dt>' + dic[keyword].title + '</dt><dd>' + dic[keyword].content + linkTag.join("") + '<dd></dl>';
 				$("#dicResponse").html(res);
 				if (settings.popup) {
 					// ポップアップに表示されるリンクからリンクとしての要素を排除(クリック出来ないため)
@@ -188,7 +182,7 @@
 					for (var key in dic) {
 						if (hasOwn.call(dic, key)) {
 							t.term[0].push(key);
-							t.term[1].push('<a href="#" class="dicTerm">'+key+'</a>');
+							t.term[1].push('<a href="#" class="dicTerm">' + key + '</a>');
 						}
 					}
 					set = false;
@@ -336,7 +330,7 @@
 					return false;
 				});
 				
-				// サジェスト
+				// Autocomplete
 				if (settings.autocomplete) {
 					$("#dicText").keyup(function(){
 						resList($(this).val());

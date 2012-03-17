@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="index.css" />
 		<link rel="stylesheet" type="text/css" href="dictionary/dictionary.css" />
 		<title>jquery.dictionary.js</title>
 	</head>
 	<body>
 		<div id="wrapper">
-			<h1>簡易辞書機能について</h1>
+			<h1>簡易辞書プラグインについて</h1>
 			<div id="target-content">
 				<h2>概要</h2>
 				ここに、辞書に登録されている単語(例えば、AESやDES、暗号、ローカルなど)を書くと、<br />
 				自動で辞書へのリンクに置き換えられます。
 				<p>
-					現在の最新バージョンは v1.0.4 です。
+					<strong>Support: Chrome, Firefox, Opera, Safari, IE6+</strong><br />
+					(D&amp;Dに対応しているのは現時点でChromeとFirefoxのみ)
+				</p>
+				<p>
+					現在の最新バージョンは v1.0.5 です。
 					<br />ダウンロードはこちら↓
 				</p>
-				<strong><a href="jquery_dictionary_js.zip">jquery_dictionary_js.zip</a></strong>
+				<strong><a href="https://github.com/ww24/jquery-dictionary-js/zipball/v1.0.5">githubからダウンロード[ZIP]</a></strong>
 			</div>
 			
 			<div id="source-code">
@@ -46,7 +50,7 @@
 		</div>
 		
 		<!-- JavaScript -->
-		<script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+		<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="dictionary/jquery.dictionary.js"></script>
 		<script type="text/javascript">
 			$("#dic").dictionary({

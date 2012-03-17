@@ -2,7 +2,7 @@ jquery.dictionary.js
 ===
 簡易辞書プラグイン
 
-Version    	: 1.0.4  
+Version    	: 1.0.5  
 Copyright	: ww24  
 Link		: [Website](http://dev.ww24.jp/javascript/jquery-dictionary-js/)  
 License		: [MIT License](http://www.opensource.org/licenses/mit-license.php)  
@@ -10,12 +10,13 @@ License		: [MIT License](http://www.opensource.org/licenses/mit-license.php)
 
 ## 概要 - Outline
 サイトに簡易的な辞書機能付加するjQueryプラグイン
+
 * 検索(文字列の部分一致)
 * 検索結果のリスト表示
 * コンテンツに自動リンク挿入(Ajax対応)
 * リンククリック時に呼び出される関数を設定することでLightBoxによる表示も可能
 * HTML5で辞書データを生成
-
+* 主要なブラウザで動作確認済み(Chrome, Firefox, Opera, Safari, IE6以降)
 
 ## 使い方 - Usage
 
@@ -55,6 +56,10 @@ License		: [MIT License](http://www.opensource.org/licenses/mit-license.php)
 
 
 ## 更新履歴 - History
+
+### v1.0.5: 2012/03/18
+- Refactoring
+- jQuery 1.6.2 -> 1.7.1
 
 ### v1.0.4: 2011/09/09
 - コードの管理をgistからgithubへ変更
